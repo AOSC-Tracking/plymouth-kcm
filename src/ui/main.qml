@@ -11,18 +11,8 @@ import QtQuick.Window 2.2
 import QtQuick.Controls 2.3 as QtControls
 import org.kde.kirigami 2.4 as Kirigami
 import org.kde.kcmutils as KCM
-import org.kde.newstuff 1.91 as NewStuff
 
 KCM.GridViewKCM {
-    actions: NewStuff.Action {
-        id: newStuffButton
-        text: i18nc("@action:button as in, get new Plymouth boot splash screens", "Get New…")
-        enabled: !kcm.busy
-        icon.name: "get-hot-new-stuff"
-        configFile: "plymouth.knsrc"
-        onEntryEvent: (entry, event) =>  kcm.onEntryEvent(entry);
-    }
-
     headerPaddingEnabled: false // Let the InlineMessage touch the edges
     header: Kirigami.InlineMessage {
         id: infoLabel
